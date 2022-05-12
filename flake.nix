@@ -7,6 +7,14 @@
   inputs.flakeNimbleLib.type  = "github";
   inputs.flakeNimbleLib.inputs.nixpkgs.follows = "nixpkgs";
   
+  inputs."validator-master".dir   = "master";
+  inputs."validator-master".owner = "nim-nix-pkgs";
+  inputs."validator-master".ref   = "master";
+  inputs."validator-master".repo  = "validator";
+  inputs."validator-master".type  = "github";
+  inputs."validator-master".inputs.nixpkgs.follows = "nixpkgs";
+  inputs."validator-master".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
+  
   outputs = { self, nixpkgs, flakeNimbleLib, ...}@inputs:
   let 
     lib  = flakeNimbleLib.lib;
